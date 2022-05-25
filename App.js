@@ -51,8 +51,22 @@ export default function App() {
         setLastNumber(currentNumber + " = ")
         calculator()
         return
-      case '+/-':
-        return
+        case '+/-':
+
+          if(currentNumber.length>1)
+          {
+            const splitNumbers = currentNumber.split(' ');
+            const fistNumber = parseFloat(splitNumbers[0]);
+            const lastNumber = parseFloat(splitNumbers[2]);
+            const operator = splitNumbers[1];
+  
+            setCurrentNumber((fistNumber+" "+operator+" "+(lastNumber * (-1))).toString());
+  
+          }
+          else{
+            setCurrentNumber((currentNumber * (-1)).toString());
+          }  
+          return;
     }
 
     setCurrentNumber(currentNumber + buttonPressed)
