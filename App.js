@@ -67,6 +67,23 @@ export default function App() {
             setCurrentNumber((currentNumber * (-1)).toString());
           }  
           return;
+
+          case '%':
+            if(currentNumber.length>1)
+            {
+              const splitNumbers = currentNumber.split(' ');
+              const fistNumber = parseFloat(splitNumbers[0]);
+              const lastNumber = parseFloat(splitNumbers[2]);
+              const operator = splitNumbers[1];
+              setCurrentNumber((fistNumber+" "+operator+" "+(lastNumber / 
+    100)).toString());
+            }
+       
+            else{
+              setCurrentNumber((currentNumber / 100).toString());
+            }    
+          return;
+    
     }
 
     setCurrentNumber(currentNumber + buttonPressed)
