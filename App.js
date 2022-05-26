@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   },
   results: {
     flex: 2,
-    justifyContent: "center",
+    justifyContent: 'flex-end',
     backgroundColor: "#21024d"
   },
   resultText: {
